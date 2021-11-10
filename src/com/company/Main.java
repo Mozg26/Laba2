@@ -26,9 +26,9 @@ public class Main {
                 System.out.print("The expression is incorrect.");
             } else {
                 System.out.print(str + " = ");
-                System.out.print(exp);
+                System.out.println(exp);
             }
-            System.out.print("Press 'e' to exit.");
+            System.out.println("Press 'e' to exit.");
             code = in.nextLine();
         }
         while (!Objects.equals(code, "e"));

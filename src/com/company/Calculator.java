@@ -213,7 +213,7 @@ public class Calculator {
      */
     @Override
     public String toString() {
-        return Expression + "\n";
+        return Expression;
     }
 
     @Override
@@ -228,4 +228,5 @@ public class Calculator {
     public int hashCode() {
         return Objects.hash(Expression);
     }
+
 }
