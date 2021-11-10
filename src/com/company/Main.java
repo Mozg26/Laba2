@@ -1,5 +1,6 @@
 package com.company;
 import java.lang.*;
+import java.util.Objects;
 import java.util.Scanner;
 import java.lang.String;
 
@@ -12,22 +13,24 @@ public class Main {
      * @param args main arguments
      */
     public static void main(String[] args) {
-        boolean t;
-
+        boolean t; String code;
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter the expression: ");
-        String str = in.nextLine();
+        do {
+            System.out.print("Enter the expression: ");
+            String str = in.nextLine();
 
-        Calculator exp = new Calculator(str);
-        t = exp.count();
+            Calculator exp = new Calculator(str);
+            t = exp.calculate();
 
-        if( !t)
-        {
-            System.out.print("The expression is incorrect.");
+            if (!t) {
+                System.out.print("The expression is incorrect.");
+            } else {
+                System.out.print(str + " = ");
+                System.out.print(exp);
+            }
+            System.out.print("Press 'e' to exit.");
+            code = in.nextLine();
         }
-        else{
-            System.out.print(str + " = ");
-            System.out.print(exp);
-        }
+        while (!Objects.equals(code, "e"));
     }
 }
